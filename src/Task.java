@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Task {
     private String title;
@@ -25,6 +26,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task: " + title + ".\nDeadline: " + deadline + ".";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return "Task: " + title + " | Deadline: " + deadline.format(formatter);
     }
 }

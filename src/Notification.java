@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Notification {
     private Task task;
@@ -8,7 +9,7 @@ public class Notification {
     public Notification(Task task, LocalDateTime notifyAt) {
         this.task = task;
         this.notifyAt = notifyAt;
-        this.status = "PENDING";
+        this.status = "Pending";
     }
 
     public Task getTask() {
@@ -29,6 +30,7 @@ public class Notification {
 
     @Override
     public String toString() {
-        return "Reminder for [" + task.getTitle() + "] at " + notifyAt + ".\nStatus: " + status  + ".";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return "Reminder for " + task.getTitle() + " at " + notifyAt.format(formatter) + ". \nStatus: " + status;
     }
 }

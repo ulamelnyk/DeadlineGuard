@@ -25,5 +25,19 @@ public class Main {
         for (Notification notification : notifications) {
             System.out.println(notification);
         }
+
+        System.out.println("Checking pending notifications:");
+        LocalDateTime now = LocalDateTime.now();
+        for (Notification notification : notifications) {
+            if (!notification.getNotifyAt().isAfter(now) && notification.getStatus().equals("Pending")) {
+                System.out.println("Sending email: Upcoming deadline for " + notification.getTask().getTitle() + ".");
+                notification.setStatus("Sent");
+            }
+        }
+
+        System.out.println("Updated notification statuses:");
+        for (Notification notification : notifications) {
+            System.out.println(notification);
+        }
     }
 }
