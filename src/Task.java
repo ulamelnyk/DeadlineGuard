@@ -11,8 +11,20 @@ public class Task {
         this.deadline = deadline;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalDateTime getDeadline() {
+        return deadline;
+    }
+
     @Override
     public String toString() {
-        return "Task: " + title + " | Deadline: " + deadline;
+        return "Task: " + title + ".\nDeadline: " + deadline + ".";
     }
 }
