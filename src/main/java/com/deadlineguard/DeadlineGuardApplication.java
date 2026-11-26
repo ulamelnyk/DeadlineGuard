@@ -1,4 +1,4 @@
-package main.java.com.deadlineguard;
+package com.deadlineguard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
